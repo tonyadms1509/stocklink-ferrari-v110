@@ -1,0 +1,1 @@
+import React from 'react'; const FirebaseErrorListener = () => <></>; export default FirebaseErrorListener;

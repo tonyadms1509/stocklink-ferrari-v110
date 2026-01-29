@@ -1,0 +1,10 @@
+{
+  "name": "stocklink-redline-v110",
+  "description": "High-Performance Construction OS for South Africa",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "version": "110.0.0"
+}
