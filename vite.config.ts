@@ -21,7 +21,11 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       port: 3000,
-      host: true
+      host: "127.0.0.1"   // force IPv4 loopback
+    },
+    preview: {
+      port: 3000,
+      host: "127.0.0.1"   // force IPv4 loopback
     }
   };
 });
