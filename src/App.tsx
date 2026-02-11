@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // ✅ import Link for navigation
 
 function App() {
   return (
@@ -12,10 +13,9 @@ function App() {
       {/* Navigation */}
       <nav style={{ marginBottom: "20px" }}>
         <ul style={{ listStyle: "none", padding: 0, display: "flex", gap: "15px" }}>
-          <li><a href="/dashboard">Dashboard</a></li>
-          <li><a href="/supplier">Supplier</a></li>
-          <li><a href="/orders">Orders</a></li>
-          <li><a href="/settings">Settings</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/supplier">Supplier</Link></li>
+          <li><Link to="/envtest">EnvTest</Link></li>
         </ul>
       </nav>
 
