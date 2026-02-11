@@ -1,11 +1,11 @@
 import React from "react";
- import EnvTest from "./components/EnvTest";  // ✅ points to components folder
 
 function App() {
   return (
-    <div className="p-4 bg-gray-900 text-white">
-      <h1>StockLink Environment Test</h1>
-      <EnvTest />
+    <div>
+      <h1>Welcome to StockLink</h1>
+      <p>This is your dashboard/home page.</p>
+      {/* Add your Supplier, Dashboard, or other components here */}
     </div>
   );
 }
