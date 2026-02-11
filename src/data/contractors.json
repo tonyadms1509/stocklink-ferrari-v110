@@ -1,0 +1,6 @@
+[
+  { "name": "John Smith", "specialization": "Plumbing", "status": "Active" },
+  { "name": "Mary Johnson", "specialization": "Electrical", "status": "Inactive" },
+  { "name": "David Brown", "specialization": "Carpentry", "status": "Active" },
+  { "name": "Sarah Lee", "specialization": "Painting", "status": "Active" }
+]

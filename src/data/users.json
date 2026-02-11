@@ -1,0 +1,6 @@
+[
+  { "username": "Admin1", "role": "Administrator", "status": "Active" },
+  { "username": "UserA", "role": "Contractor", "status": "Inactive" },
+  { "username": "UserB", "role": "Logistics Manager", "status": "Active" },
+  { "username": "UserC", "role": "Supplier Manager", "status": "Active" }
+]

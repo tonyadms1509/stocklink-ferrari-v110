@@ -1,0 +1,6 @@
+[
+  { "deliveryId": "D001", "destination": "Johannesburg", "status": "In Transit" },
+  { "deliveryId": "D002", "destination": "Pretoria", "status": "Completed" },
+  { "deliveryId": "D003", "destination": "Durban", "status": "Pending" },
+  { "deliveryId": "D004", "destination": "Cape Town", "status": "In Transit" }
+]

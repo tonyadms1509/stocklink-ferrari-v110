@@ -1,0 +1,6 @@
+[
+  { "name": "Supplier A", "category": "Building Materials", "status": "Active" },
+  { "name": "Supplier B", "category": "Electrical Equipment", "status": "Pending" },
+  { "name": "Supplier C", "category": "Plumbing Supplies", "status": "Active" }
+]
+
