@@ -1,0 +1,26 @@
+[
+  {
+    "id": 101,
+    "user": "Supplier A",
+    "method": "Paystack",
+    "amount": 2500,
+    "status": "Success",
+    "date": "2026-02-10"
+  },
+  {
+    "id": 102,
+    "user": "Contractor B",
+    "method": "PayPal",
+    "amount": 1800,
+    "status": "Pending",
+    "date": "2026-02-11"
+  },
+  {
+    "id": 103,
+    "user": "Logistics Partner C",
+    "method": "Paystack",
+    "amount": 3200,
+    "status": "Failed",
+    "date": "2026-02-12"
+  }
+]

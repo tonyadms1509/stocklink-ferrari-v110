@@ -1,6 +1,21 @@
 [
-  { "name": "John Smith", "specialization": "Plumbing", "status": "Active" },
-  { "name": "Mary Johnson", "specialization": "Electrical", "status": "Inactive" },
-  { "name": "David Brown", "specialization": "Carpentry", "status": "Active" },
-  { "name": "Sarah Lee", "specialization": "Painting", "status": "Active" }
+  {
+    "id": 1,
+    "name": "Contractor A",
+    "specialty": "Residential Construction",
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "name": "Contractor B",
+    "specialty": "Electrical Installations",
+    "status": "Pending"
+  },
+  {
+    "id": 3,
+    "name": "Contractor C",
+    "specialty": "Plumbing Services",
+    "status": "Active"
+  }
 ]
+

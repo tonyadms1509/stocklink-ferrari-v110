@@ -1,32 +1,41 @@
 import React from "react";
-import contractors from "../data/contractors.json";  // ✅ imports contractor data
+import contractors from "../data/contractors.json";
+import PaystackButton from "../components/PaystackButton";
+import PayPalButton from "../components/PayPalButton";
 
-function Contractor() {
+function ContractorPage() {
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
+    <div>
       <h1>Contractor Management</h1>
-      <p>View and manage contractor details below:</p>
-
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
+      <table border="1" cellPadding="8">
         <thead>
-          <tr style={{ backgroundColor: "#f2f2f2" }}>
-            <th style={{ border: "1px solid #ccc", padding: "8px" }}>Name</th>
-            <th style={{ border: "1px solid #ccc", padding: "8px" }}>Specialization</th>
-            <th style={{ border: "1px solid #ccc", padding: "8px" }}>Status</th>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Specialty</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
-          {contractors.map((c, index) => (
-            <tr key={index}>
-              <td style={{ border: "1px solid #ccc", padding: "8px" }}>{c.name}</td>
-              <td style={{ border: "1px solid #ccc", padding: "8px" }}>{c.specialization}</td>
-              <td style={{ border: "1px solid #ccc", padding: "8px" }}>{c.status}</td>
+          {contractors.map((c) => (
+            <tr key={c.id}>
+              <td>{c.id}</td>
+              <td>{c.name}</td>
+              <td>{c.specialty}</td>
+              <td>{c.status}</td>
             </tr>
           ))}
         </tbody>
       </table>
+
+      <div style={{ marginTop: "30px" }}>
+        <h2>Payment Options</h2>
+        <p>Select your preferred payment method:</p>
+        <PaystackButton />
+        <PayPalButton />
+      </div>
     </div>
   );
 }
 
-export default Contractor;
+export default ContractorPage;

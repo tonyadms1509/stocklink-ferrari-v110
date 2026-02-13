@@ -1,48 +1,41 @@
 import React from "react";
-import logistics from "../data/logistics.json";  // ✅ imports logistics data
+import logistics from "../data/logistics.json";
+import PaystackButton from "../components/PaystackButton";
+import PayPalButton from "../components/PayPalButton";
 
-function Logistics() {
+function LogisticsPage() {
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
-      <h1>Logistics Dashboard</h1>
-      <p>Track deliveries and fleet status below:</p>
-
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
+    <div>
+      <h1>Logistics Management</h1>
+      <table border="1" cellPadding="8">
         <thead>
-          <tr style={{ backgroundColor: "#f2f2f2" }}>
-            <th style={{ border: "1px solid #ccc", padding: "8px" }}>Delivery ID</th>
-            <th style={{ border: "1px solid #ccc", padding: "8px" }}>Destination</th>
-            <th style={{ border: "1px solid #ccc", padding: "8px" }}>Status</th>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Service</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
-          {logistics.map((l, index) => (
-            <tr key={index}>
-              <td style={{ border: "1px solid #ccc", padding: "8px" }}>{l.deliveryId}</td>
-              <td style={{ border: "1px solid #ccc", padding: "8px" }}>{l.destination}</td>
-              <td style={{ border: "1px solid #ccc", padding: "8px" }}>{l.status}</td>
+          {logistics.map((l) => (
+            <tr key={l.id}>
+              <td>{l.id}</td>
+              <td>{l.name}</td>
+              <td>{l.service}</td>
+              <td>{l.status}</td>
             </tr>
           ))}
         </tbody>
       </table>
+
+      <div style={{ marginTop: "30px" }}>
+        <h2>Payment Options</h2>
+        <p>Select your preferred payment method:</p>
+        <PaystackButton />
+        <PayPalButton />
+      </div>
     </div>
   );
 }
 
-export default Logistics;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default LogisticsPage;

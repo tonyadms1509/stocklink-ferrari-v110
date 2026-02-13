@@ -1,6 +1,20 @@
 [
-  { "deliveryId": "D001", "destination": "Johannesburg", "status": "In Transit" },
-  { "deliveryId": "D002", "destination": "Pretoria", "status": "Completed" },
-  { "deliveryId": "D003", "destination": "Durban", "status": "Pending" },
-  { "deliveryId": "D004", "destination": "Cape Town", "status": "In Transit" }
+  {
+    "id": 1,
+    "name": "Logistics Partner A",
+    "service": "Transport & Delivery",
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "name": "Logistics Partner B",
+    "service": "Warehousing",
+    "status": "Pending"
+  },
+  {
+    "id": 3,
+    "name": "Logistics Partner C",
+    "service": "Heavy Equipment Hauling",
+    "status": "Active"
+  }
 ]
