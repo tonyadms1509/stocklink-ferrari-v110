@@ -1,28 +1,25 @@
 import React from "react";
-import PaystackPop from "@paystack/inline-js";
 
 function PaystackButton() {
-  const payWithPaystack = () => {
-    const paystack = new PaystackPop();
-    paystack.newTransaction({
-      key: import.meta.env.VITE_PAYSTACK_SECRET, // must be pk_test or pk_live
-      email: "testbuyer@example.com",
-      amount: 1000 * 100, // amount in kobo (1000 NGN)
-      onSuccess: (transaction) => {
-        alert(`Payment complete! Reference: ${transaction.reference}`);
+  const paystackKey = import.meta.env.VITE_PAYSTACK_KEY;
+
+  const handlePaystack = () => {
+    const handler = (window as any).PaystackPop.setup({
+      key: paystackKey,
+      email: "customer@example.com",
+      amount: 2000 * 100, // amount in kobo (2000 NGN)
+      currency: "NGN",
+      callback: (response: any) => {
+        alert("Payment successful! Ref: " + response.reference);
       },
-      onCancel: () => {
-        alert("Payment cancelled.");
+      onClose: () => {
+        alert("Payment window closed.");
       },
     });
+    handler.openIframe();
   };
 
-  return (
-    <button onClick={payWithPaystack}>
-      Pay with Paystack
-    </button>
-  );
+  return <button onClick={handlePaystack}>Pay with Paystack</button>;
 }
 
 export default PaystackButton;
-s

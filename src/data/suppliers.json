@@ -1,22 +1,7 @@
 [
-  {
-    "id": 1,
-    "name": "Supplier A",
-    "category": "Building Materials",
-    "status": "Active"
-  },
-  {
-    "id": 2,
-    "name": "Supplier B",
-    "category": "Electrical Equipment",
-    "status": "Pending"
-  },
-  {
-    "id": 3,
-    "name": "Supplier C",
-    "category": "Plumbing Supplies",
-    "status": "Active"
-  }
+  { "id": 1, "name": "Supplier A", "category": "Building Materials", "status": "Active" },
+  { "id": 2, "name": "Supplier B", "category": "Electrical Equipment", "status": "Pending" },
+  { "id": 3, "name": "Supplier C", "category": "Plumbing Supplies", "status": "Active" }
 ]
 
 

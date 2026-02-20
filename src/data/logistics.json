@@ -1,20 +1,5 @@
 [
-  {
-    "id": 1,
-    "name": "Logistics Partner A",
-    "service": "Transport & Delivery",
-    "status": "Active"
-  },
-  {
-    "id": 2,
-    "name": "Logistics Partner B",
-    "service": "Warehousing",
-    "status": "Pending"
-  },
-  {
-    "id": 3,
-    "name": "Logistics Partner C",
-    "service": "Heavy Equipment Hauling",
-    "status": "Active"
-  }
+  { "id": 1, "name": "Logistics Partner A", "service": "Transport & Delivery", "status": "Active" },
+  { "id": 2, "name": "Logistics Partner B", "service": "Warehousing", "status": "Pending" },
+  { "id": 3, "name": "Logistics Partner C", "service": "Heavy Equipment Hauling", "status": "Active" }
 ]
