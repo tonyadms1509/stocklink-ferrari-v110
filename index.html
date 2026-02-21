@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StockLink Redline</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- ✅ Entry file must match -->
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to StockLink ✅</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
+    header { background:#004aad; color:#fff; padding:20px; text-align:center; }
+    h1 { margin:0; }
+    section { padding:40px; max-width:800px; margin:auto; }
+    .highlight { background:#e6f0ff; padding:20px; border-radius:8px; margin-bottom:20px; }
+    .commission { display:flex; gap:20px; justify-content:space-around; margin-top:20px; }
+    .box { background:#fff; border:1px solid #ddd; padding:20px; border-radius:8px; flex:1; text-align:center; }
+    footer { background:#004aad; color:#fff; text-align:center; padding:20px; margin-top:40px; }
+    a.button { display:inline-block; background:#004aad; color:#fff; padding:12px 24px; border-radius:6px; text-decoration:none; margin-top:20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to StockLink ✅</h1>
+    <p>South Africa’s fastest‑growing promoter platform</p>
+  </header>
+
+  <section>
+    <div class="highlight">
+      <h2>What is StockLink?</h2>
+      <p>StockLink connects promoters, contractors, and users in a transparent referral and payout system. 
+      Secure, simple, and rewarding — built for growth across South Africa.</p>
+    </div>
+
+    <h2>Promoter Rewards</h2>
+    <div class="commission">
+      <div class="box">
+        <h3>💵 R50 Bonus</h3>
+        <p>Per new applicant</p>
+      </div>
+      <div class="box">
+        <h3>📈 15% Commission</h3>
+        <p>Monthly while active</p>
+      </div>
+      <div class="box">
+        <h3>🎯 R1000 Milestone</h3>
+        <p>For every 20 deals closed</p>
+      </div>
+    </div>
+
+    <a href="mailto:support@stocklinksa.co.za" class="button">Contact Support</a>
+  </section>
+
+  <footer>
+    <p>© 2026 StockLink Redline | Secure • Transparent • Rewarding</p>
+  </footer>
+</body>
 </html>
