@@ -8,13 +8,13 @@
     body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
     header { background:#004aad; color:#fff; padding:20px; text-align:center; }
     h1 { margin:0; }
-    section { padding:40px; max-width:800px; margin:auto; }
+    section { padding:40px; max-width:1000px; margin:auto; }
     .highlight { background:#e6f0ff; padding:20px; border-radius:8px; margin-bottom:20px; }
-    .commission { display:flex; gap:20px; justify-content:space-around; margin-top:20px; flex-wrap:wrap; }
+    .commission, .subscriptions { display:flex; gap:20px; justify-content:space-around; margin-top:20px; flex-wrap:wrap; }
     .box { background:#fff; border:1px solid #ddd; padding:20px; border-radius:8px; flex:1; text-align:center; min-width:200px; }
     footer { background:#004aad; color:#fff; text-align:center; padding:20px; margin-top:40px; }
     a.button { display:inline-block; background:#004aad; color:#fff; padding:12px 24px; border-radius:6px; text-decoration:none; margin-top:20px; }
-    form { margin-top:20px; }
+    form { margin-top:20px; text-align:center; }
     input[type="email"] { padding:10px; width:70%; border:1px solid #ccc; border-radius:4px; }
     button { padding:10px 20px; background:#004aad; color:#fff; border:none; border-radius:4px; cursor:pointer; }
     button:hover { background:#003080; }
@@ -49,17 +49,32 @@
       </div>
     </div>
 
-    <!-- Coming Soon Subscription Section -->
+    <!-- Subscription Section -->
     <div class="highlight">
-      <h2>Coming Soon: User Subscriptions</h2>
-      <p>StockLink will soon offer monthly subscription plans with full access to referral tracking and payout dashboards.</p>
-      <ul>
-        <li><strong>Basic Plan</strong> – R99/month</li>
-        <li><strong>Pro Plan</strong> – R199/month</li>
-        <li><strong>Enterprise Plan</strong> – Custom pricing</li>
-      </ul>
+      <h2>Client Subscriptions</h2>
+      <p>Choose the plan that fits your business needs. StockLink offers tailored subscriptions for Contractors, Logistics, and Suppliers.</p>
+      <div class="subscriptions">
+        <div class="box">
+          <h3>👷 Contractor Plan</h3>
+          <p><strong>R199/month</strong></p>
+          <p>Perfect for contractors managing projects and referrals.</p>
+          <button>Join Waitlist</button>
+        </div>
+        <div class="box">
+          <h3>🚚 Logistics Plan</h3>
+          <p><strong>R399/month</strong></p>
+          <p>Ideal for logistics companies tracking deliveries and payouts.</p>
+          <button>Join Waitlist</button>
+        </div>
+        <div class="box">
+          <h3>🏭 Supplier Plan</h3>
+          <p><strong>R499/month</strong></p>
+          <p>Designed for suppliers managing stock and referral networks.</p>
+          <button>Join Waitlist</button>
+        </div>
+      </div>
       <form>
-        <label for="email">Join the waitlist:</label><br>
+        <label for="email">Join the waitlist for updates:</label><br>
         <input type="email" id="email" name="email" placeholder="Enter your email">
         <button type="submit">Notify Me</button>
       </form>
