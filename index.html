@@ -10,10 +10,14 @@
     h1 { margin:0; }
     section { padding:40px; max-width:800px; margin:auto; }
     .highlight { background:#e6f0ff; padding:20px; border-radius:8px; margin-bottom:20px; }
-    .commission { display:flex; gap:20px; justify-content:space-around; margin-top:20px; }
-    .box { background:#fff; border:1px solid #ddd; padding:20px; border-radius:8px; flex:1; text-align:center; }
+    .commission { display:flex; gap:20px; justify-content:space-around; margin-top:20px; flex-wrap:wrap; }
+    .box { background:#fff; border:1px solid #ddd; padding:20px; border-radius:8px; flex:1; text-align:center; min-width:200px; }
     footer { background:#004aad; color:#fff; text-align:center; padding:20px; margin-top:40px; }
     a.button { display:inline-block; background:#004aad; color:#fff; padding:12px 24px; border-radius:6px; text-decoration:none; margin-top:20px; }
+    form { margin-top:20px; }
+    input[type="email"] { padding:10px; width:70%; border:1px solid #ccc; border-radius:4px; }
+    button { padding:10px 20px; background:#004aad; color:#fff; border:none; border-radius:4px; cursor:pointer; }
+    button:hover { background:#003080; }
   </style>
 </head>
 <body>
@@ -43,6 +47,22 @@
         <h3>🎯 R1000 Milestone</h3>
         <p>For every 20 deals closed</p>
       </div>
+    </div>
+
+    <!-- Coming Soon Subscription Section -->
+    <div class="highlight">
+      <h2>Coming Soon: User Subscriptions</h2>
+      <p>StockLink will soon offer monthly subscription plans with full access to referral tracking and payout dashboards.</p>
+      <ul>
+        <li><strong>Basic Plan</strong> – R99/month</li>
+        <li><strong>Pro Plan</strong> – R199/month</li>
+        <li><strong>Enterprise Plan</strong> – Custom pricing</li>
+      </ul>
+      <form>
+        <label for="email">Join the waitlist:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+        <button type="submit">Notify Me</button>
+      </form>
     </div>
 
     <a href="mailto:support@stocklinksa.co.za" class="button">Contact Support</a>
