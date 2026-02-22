@@ -2,89 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to StockLink ✅</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
-    header { background:#004aad; color:#fff; padding:20px; text-align:center; }
-    h1 { margin:0; }
-    section { padding:40px; max-width:1000px; margin:auto; }
-    .highlight { background:#e6f0ff; padding:20px; border-radius:8px; margin-bottom:20px; }
-    .commission, .subscriptions { display:flex; gap:20px; justify-content:space-around; margin-top:20px; flex-wrap:wrap; }
-    .box { background:#fff; border:1px solid #ddd; padding:20px; border-radius:8px; flex:1; text-align:center; min-width:200px; }
-    footer { background:#004aad; color:#fff; text-align:center; padding:20px; margin-top:40px; }
-    a.button { display:inline-block; background:#004aad; color:#fff; padding:12px 24px; border-radius:6px; text-decoration:none; margin-top:20px; }
-    form { margin-top:20px; text-align:center; }
-    input[type="email"] { padding:10px; width:70%; border:1px solid #ccc; border-radius:4px; }
-    button { padding:10px 20px; background:#004aad; color:#fff; border:none; border-radius:4px; cursor:pointer; }
-    button:hover { background:#003080; }
-  </style>
+  <title>StockLink ✅</title>
+  <script type="module">
+    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm"
+
+    // Supabase setup
+    const supabaseUrl = "https://skptdtrduxzcijitemty.supabase.co"
+    const supabaseKey = "YOUR_ANON_KEY"   // replace with your anon key from Supabase
+    const supabase = createClient(supabaseUrl, supabaseKey)
+
+    // Waitlist form
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.querySelector("#waitlistForm")
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault()
+        const email = document.querySelector("#email").value
+        const { error } = await supabase.from("waitlist").insert([{ email }])
+        if (error) {
+          alert("Error: " + error.message)
+        } else {
+          alert("You’ve joined the waitlist!")
+        }
+      })
+    })
+
+    // Signup/Login
+    async function signup() {
+      const email = document.querySelector("#signupEmail").value
+      const password = document.querySelector("#signupPassword").value
+      const { error } = await supabase.auth.signUp({ email, password })
+      if (error) alert("Signup error: " + error.message)
+      else alert("Signup successful! Check your email for confirmation.")
+    }
+
+    async function login() {
+      const email = document.querySelector("#loginEmail").value
+      const password = document.querySelector("#loginPassword").value
+      const { error } = await supabase.auth.signInWithPassword({ email, password })
+      if (error) alert("Login error: " + error.message)
+      else alert("Login successful!")
+    }
+  </script>
 </head>
 <body>
-  <header>
-    <h1>Welcome to StockLink ✅</h1>
-    <p>South Africa’s fastest‑growing promoter platform</p>
-  </header>
+  <h1>Welcome to StockLink ✅</h1>
+  <p>South Africa’s fastest‑growing promoter platform</p>
 
-  <section>
-    <div class="highlight">
-      <h2>What is StockLink?</h2>
-      <p>StockLink connects promoters, contractors, and users in a transparent referral and payout system. 
-      Secure, simple, and rewarding — built for growth across South Africa.</p>
-    </div>
+  <!-- Waitlist -->
+  <h2>Join the Waitlist</h2>
+  <form id="waitlistForm">
+    <input type="email" id="email" placeholder="Enter your email" required>
+    <button type="submit">Join Waitlist</button>
+  </form>
 
-    <h2>Promoter Rewards</h2>
-    <div class="commission">
-      <div class="box">
-        <h3>💵 R50 Bonus</h3>
-        <p>Per new applicant</p>
-      </div>
-      <div class="box">
-        <h3>📈 15% Commission</h3>
-        <p>Monthly while active</p>
-      </div>
-      <div class="box">
-        <h3>🎯 R1000 Milestone</h3>
-        <p>For every 20 deals closed</p>
-      </div>
-    </div>
+  <!-- Signup/Login -->
+  <h2>Create Account</h2>
+  <input type="email" id="signupEmail" placeholder="Email">
+  <input type="password" id="signupPassword" placeholder="Password">
+  <button onclick="signup()">Sign Up</button>
 
-    <!-- Subscription Section -->
-    <div class="highlight">
-      <h2>Client Subscriptions</h2>
-      <p>Choose the plan that fits your business needs. StockLink offers tailored subscriptions for Contractors, Logistics, and Suppliers.</p>
-      <div class="subscriptions">
-        <div class="box">
-          <h3>👷 Contractor Plan</h3>
-          <p><strong>R199/month</strong></p>
-          <p>Perfect for contractors managing projects and referrals.</p>
-          <button>Join Waitlist</button>
-        </div>
-        <div class="box">
-          <h3>🚚 Logistics Plan</h3>
-          <p><strong>R399/month</strong></p>
-          <p>Ideal for logistics companies tracking deliveries and payouts.</p>
-          <button>Join Waitlist</button>
-        </div>
-        <div class="box">
-          <h3>🏭 Supplier Plan</h3>
-          <p><strong>R499/month</strong></p>
-          <p>Designed for suppliers managing stock and referral networks.</p>
-          <button>Join Waitlist</button>
-        </div>
-      </div>
-      <form>
-        <label for="email">Join the waitlist for updates:</label><br>
-        <input type="email" id="email" name="email" placeholder="Enter your email">
-        <button type="submit">Notify Me</button>
-      </form>
-    </div>
+  <h2>Login</h2>
+  <input type="email" id="loginEmail" placeholder="Email">
+  <input type="password" id="loginPassword" placeholder="Password">
+  <button onclick="login()">Login</button>
 
-    <a href="mailto:support@stocklinksa.co.za" class="button">Contact Support</a>
-  </section>
+  <!-- Subscription Buttons -->
+  <h2>Client Subscriptions</h2>
+  <div>
+    <h3>👷 Contractor Plan — R199/month</h3>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <input type="hidden" name="cmd" value="_xclick-subscriptions">
+      <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL">
+      <input type="hidden" name="item_name" value="Contractor Plan">
+      <input type="hidden" name="a3" value="199">
+      <input type="hidden" name="p3" value="1">
+      <input type="hidden" name="t3" value="M">
+      <input type="hidden" name="currency_code" value="ZAR">
+      <button type="submit">Subscribe with PayPal</button>
+    </form>
+    <button onclick="window.open('https://paystack.com/pay/YOUR_CONTRACTOR_LINK','_blank')">Subscribe with Paystack</button>
+  </div>
 
-  <footer>
-    <p>© 2026 StockLink Redline | Secure • Transparent • Rewarding</p>
-  </footer>
+  <div>
+    <h3>🚚 Logistics Plan — R399/month</h3>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <input type="hidden" name="cmd" value="_xclick-subscriptions">
+      <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL">
+      <input type="hidden" name="item_name" value="Logistics Plan">
+      <input type="hidden" name="a3" value="399">
+      <input type="hidden" name="p3" value="1">
+      <input type="hidden" name="t3" value="M">
+      <input type="hidden" name="currency_code" value="ZAR">
+      <button type="submit">Subscribe with PayPal</button>
+    </form>
+    <button onclick="window.open('https://paystack.com/pay/YOUR_LOGISTICS_LINK','_blank')">Subscribe with Paystack</button>
+  </div>
+
+  <div>
+    <h3>🏭 Supplier Plan — R499/month</h3>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <input type="hidden" name="cmd" value="_xclick-subscriptions">
+      <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL">
+      <input type="hidden" name="item_name" value="Supplier Plan">
+      <input type="hidden" name="a3" value="499">
+      <input type="hidden" name="p3" value="1">
+      <input type="hidden" name="t3" value="M">
+      <input type="hidden" name="currency_code" value="ZAR">
+      <button type="submit">Subscribe with PayPal</button>
+    </form>
+    <button onclick="window.open('https://paystack.com/pay/YOUR_SUPPLIER_LINK','_blank')">Subscribe with Paystack</button>
+  </div>
 </body>
 </html>
